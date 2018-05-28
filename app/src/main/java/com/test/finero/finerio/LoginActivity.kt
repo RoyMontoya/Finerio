@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.test.finero.finerio.activities.MovimientosActivity
+import com.test.finero.finerio.utility.StringUtility
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -20,7 +21,10 @@ class LoginActivity : AppCompatActivity() {
          val password = if(et_password.text.isEmpty()) "" else et_password.text
 
         if(username.isNotEmpty() && password.isNotEmpty()){
-            startActivity(Intent(this, MovimientosActivity::class.java))
+            var intent = Intent(this, MovimientosActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            intent.putExtra(StringUtility.USER_EXTRA, username)
+            startActivity(intent)
         }
     }
 }
