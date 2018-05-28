@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.test.finero.finerio.R
 import com.test.finero.finerio.model.Movimiento
-import kotlinx.android.synthetic.main.card_movimiento.view.*
+import kotlinx.android.synthetic.main.row_movimiento.view.*
 
 class MovimientosAdapter(val movimientos: List<Movimiento>) : RecyclerView.Adapter<MovimientosAdapter.MovimientosViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovimientosViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_movimiento, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.row_movimiento, parent, false)
         return MovimientosViewHolder(view)
     }
 
