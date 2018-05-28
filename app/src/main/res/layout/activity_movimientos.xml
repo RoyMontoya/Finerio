@@ -21,11 +21,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:text="UserName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_image" />
@@ -39,45 +39,45 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/tv_username">
 
         <TextView
-            android:id="@+id/row_date"
+            android:id="@+id/header_date"
             style="@style/list_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/header_text_date"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/row_description"
+            app:layout_constraintEnd_toStartOf="@+id/header_description"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/row_description"
+            android:id="@+id/header_description"
             style="@style/list_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/header_text_description"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/row_monto"
+            app:layout_constraintEnd_toStartOf="@+id/header_monto"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/row_date" />
+            app:layout_constraintStart_toEndOf="@+id/header_date" />
 
         <TextView
-            android:id="@+id/row_monto"
+            android:id="@+id/header_monto"
             style="@style/list_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/header_text_monto"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/row_clasificacion"
+            app:layout_constraintEnd_toStartOf="@+id/header_clasificacion"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/row_description" />
+            app:layout_constraintStart_toEndOf="@+id/header_description" />
 
         <TextView
-            android:id="@+id/row_clasificacion"
+            android:id="@+id/header_clasificacion"
             style="@style/list_header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/row_monto" />
+            app:layout_constraintStart_toEndOf="@+id/header_monto" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.v7.widget.RecyclerView
