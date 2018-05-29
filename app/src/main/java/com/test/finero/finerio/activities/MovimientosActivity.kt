@@ -28,7 +28,7 @@ class MovimientosActivity : AppCompatActivity() {
     }
 
     private fun setUserName() {
-        tv_username.text = if (intent.extras != null) intent.extras.get(StringUtility.USER_EXTRA).toString()
+        tv_username.text = if (intent.extras != null) intent.extras.get(StringUtility.LOGIN_EXTRA).toString()
         else ""
     }
 

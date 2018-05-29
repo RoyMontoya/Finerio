@@ -2,5 +2,6 @@ package com.test.finero.finerio.utility
 
 object StringUtility {
 
-    val USER_EXTRA = "userExtra"
+    val LOGIN_EXTRA = "userExtra"
+    val BASE_URL = "https://api.finerio.mx/api/"
 }
