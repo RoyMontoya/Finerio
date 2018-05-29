@@ -19,4 +19,14 @@
         <item name="android:background">@android:color/black</item>
     </style>
 
+    <style name="edit_text_login">
+        <item name="android:layout_width">@dimen/width_login_views</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/small_padding</item>
+        <item name="android:layout_marginEnd">@dimen/small_padding</item>
+        <item name="android:layout_marginStart">@dimen/small_padding</item>
+        <item name="android:ems">10</item>
+    </style>
+
+
 </resources>

@@ -2,4 +2,5 @@
 <resources>
     <dimen name="width_login_views">250dp</dimen>
     <dimen name="padding_standard_view">16dp</dimen>
+    <dimen name="small_padding">8dp</dimen>
 </resources>

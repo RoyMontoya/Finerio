@@ -37,5 +37,3 @@ class MovimientosAdapter(val movimientos: List<Movimiento>) : RecyclerView.Adapt
     }
 
 }
-
-
