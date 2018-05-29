@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.test.finero.finerio.R
-import com.test.finero.finerio.responses.LoginResponse
-import com.test.finero.finerio.responses.MeResponse
+import com.test.finero.finerio.responseObjects.LoginResponse
+import com.test.finero.finerio.responseObjects.MeResponse
 import com.test.finero.finerio.utility.FinerioNetwork
 import com.test.finero.finerio.utility.StringUtility
 import kotlinx.android.synthetic.main.activity_login.*

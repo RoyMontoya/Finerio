@@ -1,8 +1,8 @@
 package com.test.finero.finerio.network
 
-import com.test.finero.finerio.responses.LoginResponse
-import com.test.finero.finerio.responses.MeResponse
-import com.test.finero.finerio.responses.MovimientosResponse
+import com.test.finero.finerio.responseObjects.LoginResponse
+import com.test.finero.finerio.responseObjects.MeResponse
+import com.test.finero.finerio.responseObjects.MovimientosResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -32,8 +32,8 @@ interface FinerioApiService {
             "Origin: https://app.finerio.mx",
             "Referer: https://app.finerio.mx/app/dashboard",
             "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36")
-    @GET("users/{id}")
-    fun movimientosCall(@QueryMap options: Map<String, String>,  @Path("id") id: String,
-                        @Header("authorization") auth: String) : Call<MovimientosResponse>
+    @GET("users/{id}/movements")
+    fun movimientosCall(@Path("id") id: String, @QueryMap options: Map<String, String>,
+                        @Header("authorization") auth: String): Call<MovimientosResponse>
 
 }

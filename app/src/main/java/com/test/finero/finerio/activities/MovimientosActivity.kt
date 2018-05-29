@@ -6,8 +6,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import com.test.finero.finerio.R
 import com.test.finero.finerio.adapters.MovimientosAdapter
-import com.test.finero.finerio.model.Movimiento
-import com.test.finero.finerio.responses.MovimientosResponse
+import com.test.finero.finerio.responseObjects.MovimientosResponse
+import com.test.finero.finerio.responseObjects.Movimiento
 import com.test.finero.finerio.utility.FinerioNetwork
 import com.test.finero.finerio.utility.StringUtility
 import kotlinx.android.synthetic.main.activity_movimientos.*
@@ -38,49 +38,32 @@ class MovimientosActivity : AppCompatActivity() {
 
     private fun callMovimientos() {
         if (intent.extras != null) {
-            FinerioNetwork.service.movimientosCall(query,
-                    intent.extras.get(StringUtility.ID_EXTRA).toString(),
-                    intent.extras.get(StringUtility.AUTH_EXTRA).toString()).enqueue(object : Callback<MovimientosResponse>{
+            FinerioNetwork.service.movimientosCall(intent.extras.get(StringUtility.ID_EXTRA).toString(),
+                    query,
+                    intent.extras.get(StringUtility.AUTH_EXTRA).toString()).enqueue(object : Callback<MovimientosResponse> {
                 override fun onFailure(call: Call<MovimientosResponse>?, t: Throwable?) {
                     Log.d(MovimientosActivity::class.java.simpleName, "fail")
                 }
 
                 override fun onResponse(call: Call<MovimientosResponse>?, response: Response<MovimientosResponse>?) {
-                    Log.d(MovimientosActivity::class.java.simpleName, "success")
+                    if (response?.raw()?.code() == 200) {
+                        setMovimientoList(response.body()?.movimientos ?: arrayListOf())
+                    }
                 }
-
             })
-
         }
-
 
     }
 
-    private fun setMovimientoList() {
+    private fun setMovimientoList(movimientos: List<Movimiento>) {
         list_movimientos.setHasFixedSize(true)
         list_movimientos.layoutManager = LinearLayoutManager(this)
-        list_movimientos.adapter = MovimientosAdapter(createDummyList())
+        list_movimientos.adapter = MovimientosAdapter(movimientos)
     }
 
     private fun setUserName() {
         tv_username.text = if (intent.extras != null) intent.extras.get(StringUtility.LOGIN_EXTRA).toString() else ""
     }
-
-    private fun createDummyList(): List<Movimiento> {
-        return listOf(
-                Movimiento("MAY28", "TEST", "100", "TEST"),
-                Movimiento("MAY28", "TEST", "100", "TEST"),
-                Movimiento("MAY28", "TEST", "100", "TEST"),
-                Movimiento("MAY28", "TEST", "100", "TEST"),
-                Movimiento("MAY28", "TEST", "100", "TEST"),
-                Movimiento("MAY28", "TEST", "100", "TEST"),
-                Movimiento("MAY28", "TEST", "100", "TEST"),
-                Movimiento("MAY28", "TEST", "100", "TEST"),
-                Movimiento("MAY28", "TEST", "100", "TEST"),
-                Movimiento("MAY28", "TEST", "100", "TEST")
-        )
-    }
-
 
     override fun onBackPressed() {
         alert {

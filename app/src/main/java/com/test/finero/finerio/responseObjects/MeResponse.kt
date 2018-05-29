@@ -1,4 +1,4 @@
-package com.test.finero.finerio.responses
+package com.test.finero.finerio.responseObjects
 
 import com.google.gson.annotations.SerializedName
 
