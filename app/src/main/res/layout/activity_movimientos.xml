@@ -103,7 +103,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <ProgressBar
-        android:id="@+id/progressbar_movimientos"
+        android:id="@+id/movimientos_progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
