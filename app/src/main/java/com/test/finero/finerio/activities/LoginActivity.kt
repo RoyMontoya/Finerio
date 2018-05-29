@@ -24,7 +24,6 @@ class LoginActivity : AppCompatActivity() {
 
         et_username.setText("roymontoya89@gmail.com")
         et_password.setText("R208201349")
-
     }
 
     fun loginRequest(view: View) {

@@ -62,7 +62,7 @@ class MovimientosActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<MovimientosResponse>?, response: Response<MovimientosResponse>?) {
                     movimientosOnRequest = false
                     movimientos_progress.visibility = View.GONE
-                    if (response?.raw()?.code() == 200) {
+                    if (response?.raw()?.code() == 200 && movimientos.size < response.body()?.movimientos?.size ?: 0) {
                         if (isUpdating) {
                             movimientos.clear()
                             movimientos.addAll(response.body()?.movimientos ?: mutableListOf())
@@ -71,7 +71,6 @@ class MovimientosActivity : AppCompatActivity() {
                             movimientos.addAll(response.body()?.movimientos ?: mutableListOf())
                             setMovimientoList()
                         }
-
                     }
                 }
             })
@@ -90,11 +89,9 @@ class MovimientosActivity : AppCompatActivity() {
                 super.onScrollStateChanged(recyclerView, newState)
                 val totalItemCount = recyclerView?.layoutManager?.itemCount
                 if (totalItemCount == linearLayoutManager.findLastVisibleItemPosition() + 1 && !movimientosOnRequest) {
-                    if (pagination + 10 >= totalItemCount) {
-                        pagination += 10
-                        queryMap["max"] = (pagination).toString()
-                        callMovimientos(true)
-                    }
+                    pagination += 10
+                    queryMap["max"] = (pagination).toString()
+                    callMovimientos(true)
                 }
             }
         })
