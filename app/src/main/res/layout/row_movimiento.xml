@@ -24,8 +24,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:gravity="top|start"
-        android:lines="3"
-        android:maxLines="3"
+        android:lines="2"
+        android:maxLines="2"
         android:minLines="1"
         android:singleLine="false"
         android:text="@string/header_text_description"
@@ -59,17 +59,18 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:gravity="top|start"
-        android:lines="3"
-        android:maxLines="3"
+        android:lines="2"
+        android:maxLines="2"
         android:minLines="1"
         android:singleLine="false"
         android:text="@string/header_text_clas"
-        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_weight="30"
         app:layout_constraintStart_toEndOf="@+id/row_monto"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/view"
