@@ -7,4 +7,5 @@
     <string name="header_text_description">Description</string>
     <string name="header_text_monto">Monto</string>
     <string name="header_text_clas">Clasificacion</string>
+    <string name="dialog_text_close_session">Deseas cerrar sesion?</string>
 </resources>

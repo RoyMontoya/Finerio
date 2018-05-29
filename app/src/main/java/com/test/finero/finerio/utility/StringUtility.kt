@@ -6,4 +6,5 @@ object StringUtility {
     val ID_EXTRA = "idExtra"
     val AUTH_EXTRA = "authExtra"
     val BASE_URL = "https://api.finerio.mx/api/"
+    val DATE_FORMAT = "YYYY-MM-dd"
 }

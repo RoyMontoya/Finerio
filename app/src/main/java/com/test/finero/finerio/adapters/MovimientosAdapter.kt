@@ -11,14 +11,12 @@ import java.text.DateFormatSymbols
 
 class MovimientosAdapter(val movimientos: List<Movimiento>) : RecyclerView.Adapter<MovimientosAdapter.MovimientosViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovimientosViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.row_movimiento, parent, false)
         return MovimientosViewHolder(view)
     }
 
     override fun getItemCount() = movimientos.size
-
 
     override fun onBindViewHolder(holder: MovimientosViewHolder?, position: Int) {
         holder?.let {
@@ -33,10 +31,11 @@ class MovimientosAdapter(val movimientos: List<Movimiento>) : RecyclerView.Adapt
     class MovimientosViewHolder(val row: View) : RecyclerView.ViewHolder(row)
 
     private fun finerioFormat(date: String): String {
-        return date.substring(5, 10).replace("-", "")
+        return date.substring(5, 10).replace("-", " ")
                 .replaceRange(0..2, DateFormatSymbols()
                         .shortMonths[date.substring(5, 7).toInt() - 1].toUpperCase())
     }
+
 }
 
 

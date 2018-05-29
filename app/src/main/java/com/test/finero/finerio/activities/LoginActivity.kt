@@ -24,8 +24,8 @@ class LoginActivity : AppCompatActivity() {
 
         et_username.setText("roymontoya89@gmail.com")
         et_password.setText("R208201349")
-    }
 
+    }
 
     fun loginRequest(view: View) {
         val username = if (et_username.text.isEmpty()) "" else et_username.text.toString()
@@ -39,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
             progressbar.visibility = View.VISIBLE
             callLogin(loginBody)
         }
+
     }
 
     private fun callLogin(loginBody: HashMap<String, String>) {
@@ -51,7 +52,8 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<LoginResponse>?, response: Response<LoginResponse>?) {
                 if (response?.raw()?.code() == 200) {
-                    callMe(response.body()?.tokenType + " " + response.body()?.AccessToken, response.body()?.username ?: "")
+                    callMe(response.body()?.tokenType + " " + response.body()?.AccessToken, response.body()?.username
+                            ?: "")
                 } else {
                     progressbar.visibility = View.GONE
                     longToast("Usuario o password Incorrecto")
@@ -84,4 +86,5 @@ class LoginActivity : AppCompatActivity() {
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
     }
+
 }
