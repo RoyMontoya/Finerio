@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="width_login_views">250dp</dimen>
-    <dimen name="padding_standard_view">16dp</dimen>
+    <dimen name="standard_padding">16dp</dimen>
     <dimen name="small_padding">8dp</dimen>
+    <dimen name="button_login_text_size">24sp</dimen>
 </resources>
